@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    {% if category_id == None %}
+    <h1>Все категории</h1>
+    {% else %}
+    <h1>{{ cat_one.cat_name }}</h1>
+    {% endif %}
+    <button class="btn-profile"><a href="{% url 'aqua_base' %}">на главную</a></button>
+    {% block content %}
+    {% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+{% extends 'products/base.html' %}
+
+{% block content %}
+
+<div class="cards">
+    {% for p in products_list %}
+        <div class="card">
+            <a href="{% url 'product' p.id %}">
+            <h2>{{ p.name }}</h2>
+            <img class="image_card" src="{{ p.image.url }}" alt="image_card">
+            </a>
+            <p>{{ p.short_description }}</p>
+            <p>Цена: {{ p.price }}</p>
+            <p>Осталось: {{ p.quantity }} шт</p>
+        </div>
+    {% endfor %}
+</div>
+
+<div class="pagin">
+    <ul>
+        {% if products_list.has_previous %}
+        <li><a href="?page={{ products_list.previous_page_number }}" class="pbtn" data-page="{{ products_list.previous_page_number }}">&#10094;</a></li>
+        {% endif %}
+        {% for page in pages_range %}
+        {% if page == products_list.number %}
+        <li><a href="?page={{ page }}" class="pbtn-active" data-page="{{ page }}">{{ page }}</a></li>
+        {% else %}
+        <li><a href="?page={{ page }}" class="pbtn" data-page="{{ page }}">{{ page }}</a></li>
+        {% endif %}
+        {% endfor %}
+
+        {% if products_list.has_next %}
+        <li><a href="?page={{ products_list.next_page_number }}" class="pbtn" data-page="{{ products_list.next_page_number }}">&#10095;</a></li>
+        {% endif %}
+    </ul>
+</div>
+{% endblock %}

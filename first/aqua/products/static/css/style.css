@@ -1,0 +1,355 @@
+html, body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
+.contbase{
+    border: solid 4px rgb(32, 32, 127);
+    border-radius: 15px;
+    background-image: url('1636593421_31-papik-pro-p-html-risunok-fona-32.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    padding-top: 10px
+}
+
+h1{
+margin: 50px;
+margin-top: 20px;
+display: block;
+background-image: url(1498166091_12.jpg);
+border: solid 5px rgb(47, 47, 184);
+padding: 20px 50px;
+color: white;
+font-size: 75px;
+font-weight: bold;
+text-align: center;
+text-decoration: double;
+box-sizing: border-box;
+}
+
+h1:hover{
+    color: white;
+}
+
+.my-h-100 {
+    height: 700px;
+}
+
+
+.slaider_h {
+	height: 60px;
+	width: 50%;
+	margin: 30px 0px 60px 0px;
+	padding-top: 20px;
+    padding-bottom: 20px;
+	background-color: rgba(10, 77, 125, 0.5);
+    font-size: 35px;
+	text-align: center;    
+}
+
+.slaider_p {
+	height: 100%;
+	width: 80%;
+	float: right;
+	margin: 20px 0px 30px 0px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background-color: rgba(10, 77, 125, 0.5);
+    font-size: 22px;
+	text-align: center;
+    
+}
+
+.content{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+ul{
+    list-style: none;
+}
+
+.sidebar-cat ul {
+    width: 320px;
+    margin-left: 40px;
+    margin-right: 90px;
+    margin-top: 20px;
+}
+
+.sidebar-cat a{
+    margin-bottom: 10px;
+    padding: 20px;
+    display: block;
+    border: 2px solid #FFF;
+    background: #264b5d;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.selected{
+    margin-bottom: 10px;
+    padding: 20px;
+    color: white;
+    border: 2px solid black;
+    background:  rgb(174, 174, 133);
+    font-weight: bold;
+    font-size: 27px;
+}
+
+
+.sidebar-menu ul {
+    width: 320px;
+    margin-left: 40px;
+    margin-right: 80px;
+    margin-top: 20px;
+}
+
+.sidebar-menu a{
+    margin-bottom: 10px;
+    padding: 20px;
+    display: block;
+    color: white;
+    border: 2px solid #FFF;
+    background: rgb(174, 174, 133);
+    font-weight: bold;
+    font-size: 22px;
+}
+
+/* Стилизация карточек */
+
+.cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    background-image: url('1636593421_31-papik-pro-p-html-risunok-fona-32.jpg');
+    border-radius: 15px;
+
+}
+
+.card{
+    width: 450px;
+    padding: 5px;
+    margin: 50px;
+    border:  2px solid white;
+    background: rgb(214, 214, 222);
+    box-sizing: border-box;
+
+}
+
+.image_card{
+    display: block;
+    width: 100%;
+    height: 350px;
+    display: block;
+    object-fit: cover;
+    border:  2px solid white;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.card p{
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.btn-profile{
+    display: block;
+    width: 150px;
+    height: 50px;
+    margin-bottom: 20px;
+    margin-left: 50px;
+    font-size: 22px;
+    font-weight: bold;
+    text-decoration: none;
+    align-items: center;
+    /* border: 2px solid black; */
+    box-sizing: border-box;
+}
+
+.btn-profile:hover{
+    background: rgb(219, 219, 173);
+}
+
+.sidebar-cat a:hover{
+    color: white;
+    text-decoration: none;
+}
+
+/* Стилизация одного товара */
+
+.product{
+    display: block;
+    border: solid 4px rgb(32, 32, 127);
+    border-radius: 15px;
+    background-image: url('1636593421_31-papik-pro-p-html-risunok-fona-32.jpg');
+    color: white;
+    margin-top: 50px;
+    padding: 15px;
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+
+.row{
+    display: flex;        
+}
+
+/* Левая - картинки */
+
+.col-lg-5{
+    width: 500px;
+}
+
+.center{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 50px;
+    /* gap: 10px; */
+}
+
+.big{
+    width: 100%;
+    height: 500px;
+    margin: 50px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.small{
+    width: 27%;
+    margin-top: -10px;
+    margin-left: 50px;
+    object-fit: cover;   
+}
+
+/* Правая - текст */
+
+.texts{
+    margin-top: 50px;
+    margin-left: 100px;
+    width: 700px;
+    
+}
+
+.short-text{
+    font-size: 30px;
+    overflow-wrap: break-word;
+}
+
+.long-text{
+    font-size: 18px;
+    overflow-wrap: break-word;
+}
+
+.btn-product{
+    display: block;
+    width: 150px;
+    height: 35px;
+    margin-top: 50px;
+    padding-top: 5px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    background-image: url('1636593421_31-papik-pro-p-html-risunok-fona-32.jpg');
+    border: solid 1px rgb(32, 32, 127);
+    box-sizing: border-box;
+}
+
+.panda{
+    display: block;
+    margin-left: 200px;
+}
+
+/* К формам поиска товаров */
+
+.form1{
+    display: inline-block;
+    display: flex;
+    height: 70px;
+    margin-top: 70px;
+    margin-left: 50px; 
+}
+
+.form__field1{    
+    /* text-align: start; */
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+}
+
+.search_product{
+    width: 300px;
+    height: 70px;
+    padding-left: 10px;
+    background: rgb(174, 174, 133);
+}
+
+.btn_search_product{
+    width: 320px;
+    height: 70px;
+    background-color: yellow;
+    width: 100px;
+    margin-left: 5px;
+    font-weight: bold;
+}
+
+.btn_search_product:hover{
+    background-color:rgb(136, 230, 136);
+
+}
+
+/* Пагинация */
+
+.pagin{
+    width: 100%;
+    margin-top: 40px;
+    
+}    
+
+.pagin ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.pagin li{
+    display: block;
+    width: 70px;
+    height: 60px;
+    padding: 10px;
+    text-align: center;    
+    border: 3px solid black;
+    border-radius: 10px;
+    box-sizing: border-box;
+
+}
+
+.pbtn{
+    display: block;
+    font-size: 25px;
+    color: black;
+    font-weight: bold;
+    align-items: center;
+    
+}
+
+.pbtn-active{
+    display: block;
+    font-size: 25px;
+    color: black;
+    font-weight: bold;
+    align-items: center;
+    background-color: rgb(182, 182, 148);
+    
+}
+
+
+

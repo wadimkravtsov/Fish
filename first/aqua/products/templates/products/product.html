@@ -1,0 +1,27 @@
+{% extends 'products/base.html' %}
+{% load static %}
+
+{% block content %}
+<p class="product">{{ product.name }}</p>
+<div class="row">
+    <div class="col-lg-5">
+        <img src="{{ product.image.url }}" alt="" class="big">
+        <br>
+        <div class="center">
+            {% for img in product.photo_set.all %}
+            <img src="{{ img.add_photo.url }}" alt="" class="small">
+            {% endfor %}
+        </div>
+    </div>
+    <div class="texts">
+        <h4 class="short-text">{{ product.short_description }}</h4>
+        <h2 class="price">{{ product.price }} руб.</h2>
+        <h5 class="quantity">В наличии: {{ product.quantity }} шт.</h5>
+        <div class="long-text">
+            {{ product.description }}
+        </div>
+        <a href="/" class="btn-product">В КОРЗИНУ</a>
+        <img src="../../static/panda/panda.jpg" class="panda" alt="Панда" width="500" height="375">
+    </div>
+</div>
+{% endblock %}
