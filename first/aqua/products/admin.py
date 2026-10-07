@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import CatSlider, Product, Photo
+from .models import CatSlider, Product, Photo, Basket
 
 
 
@@ -20,3 +20,4 @@ class PhotoAdmin(admin.ModelAdmin):
 admin.site.register(CatSlider)
 admin.site.register(Product,ProductAdmin)
 admin.site.register(Photo,PhotoAdmin)
+admin.site.register(Basket)

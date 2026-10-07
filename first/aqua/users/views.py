@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .forms import UserLoginForm,  UserRegistrationForm, UserProfileForm
 from django.contrib import auth, messages
+from products.models import Basket
 from products.models import CatSlider
 from django.contrib.auth.decorators import login_required
 
@@ -76,17 +77,17 @@ def profile(request):
     else:
         form = UserProfileForm(instance=user)
 
-    # baskets = Basket.objects.filter(user=user)
-    # total_quantity = sum(basket.quantity for basket in baskets)  # [7, 3, 2] = 12
-    # total_sum = sum(basket.sum() for basket in baskets)
+    baskets = Basket.objects.filter(user=user)
+    total_quantity = sum(basket.quantity for basket in baskets)  # [7, 3, 2] = 12
+    total_sum = sum(basket.sum() for basket in baskets)
 
     context = {
         'title': 'Store - Профиль',
         'form': form,
-        'slider_list': slider_list
-        # 'baskets': Basket.objects.filter(user=user),
-        # 'total_quantity': total_quantity,
-        # 'total_sum': total_sum
+        'slider_list': slider_list,
+        'baskets': Basket.objects.filter(user=user),
+        'total_quantity': total_quantity,
+        'total_sum': total_sum
     }
     return render(request, 'users/profile.html', context)
 

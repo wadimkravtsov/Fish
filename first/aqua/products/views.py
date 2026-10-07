@@ -1,6 +1,7 @@
-from django.shortcuts import render
-from .models import CatSlider, Product
+from django.shortcuts import render, redirect
+from .models import CatSlider, Product, Basket
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def aqua_base(request):
@@ -67,3 +68,36 @@ def product(request, pk):
         'product': product_obj,
     }
     return render(request, 'products/product.html', context)
+
+@login_required
+def basket_add(request, product_id):
+    current_page = request.META.get("HTTP_REFERER")
+    product = Product.objects.get(id=product_id)
+    baskets = Basket.objects.filter(user=request.user, product=product)
+    if not baskets.exists():
+        Basket.objects.create(user=request.user, product=product, quantity=1)
+        return redirect(current_page)
+
+    else:
+        basket = baskets.first()
+        basket.quantity += 1
+        basket.save()
+        return redirect(current_page)
+
+def basket_minus(request, product_id):
+    current_page = request.META.get("HTTP_REFERER")
+    product = Product.objects.get(id=product_id)
+    baskets = Basket.objects.filter(user=request.user, product=product)
+    if baskets.exists():
+        basket = baskets.first()
+        if basket.quantity > 1:
+            basket.quantity -= 1
+            basket.save()
+        else:
+            basket.delete()
+        return redirect(current_page)
+
+def basket_delete(request, basket_id):
+    basket = Basket.objects.get(id=basket_id)
+    basket.delete()
+    return redirect(request.META.get("HTTP_REFERER"))

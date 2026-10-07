@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 class CatSlider(models.Model):
     cat_name = models.CharField(max_length=200, verbose_name="Название")
@@ -41,3 +42,19 @@ class Photo(models.Model):
     class Meta:
         verbose_name = 'изображение'
         verbose_name_plural = 'изображения'
+
+class Basket(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, verbose_name="Товар")
+    quantity = models.PositiveIntegerField(default=0, verbose_name='Количество товара')
+    create_database = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Корзина для {self.user.username} | Продукт {self.product.name}"
+
+    def sum(self):
+        return self.quantity * self.product.price
+
+    class Meta:
+        verbose_name = 'товар в корзину'
+        verbose_name_plural = 'корзина'
