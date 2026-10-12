@@ -46,7 +46,7 @@
                     {% else %}
                     <li><a href="{% url 'login' %}">Войти</a></li>
                     {% endif %}
-                    <li><a href="/">Заказы</a></li>
+                    <li><a href="{% url 'orders-list' %}">Заказы</a></li>
                     <li><a href="{% url 'logout' %}">Выйти</a></li>
                 </ul>
                 <img src="../../static/panda/panda.jpg" alt="Панда" width="400" height="300">
