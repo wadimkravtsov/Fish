@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+
 class CatSlider(models.Model):
     cat_name = models.CharField(max_length=200, verbose_name="Название")
     cms_img = models.ImageField(upload_to='cat_img/', verbose_name="Изображение")
@@ -63,6 +64,15 @@ class Basket(models.Model):
 
     def sum(self):
         return self.quantity * self.product.price
+
+    def de_json(self):
+        basket_item = {
+            'product_name': self.product.name,
+            'quantity': self.quantity,
+            'price': float(self.product.price),
+            'sum': float(self.sum())
+        }
+        return basket_item
 
     class Meta:
         verbose_name = 'товар в корзину'
