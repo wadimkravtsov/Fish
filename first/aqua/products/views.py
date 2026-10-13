@@ -19,15 +19,18 @@ def products(request, category_id=None):
     if request.GET.get('search_product'):
         search_product = request.GET.get('search_product')
     slider_list = CatSlider.objects.all()
-    # cat_one = CatSlider.objects.get(id = category_id)
+
 
     if category_id:
         pr = Product.objects.filter(category_id=category_id, name__icontains=search_product)
+        cat_one = CatSlider.objects.get(id=category_id)
+        tit = f"Panda - {cat_one.cat_name}"
     else:
         pr = Product.objects.filter(name__icontains=search_product)
+        tit = 'Магазин аквариумистики "Panda"'
 
     page = request.GET.get('page')
-    result = 3
+    result = 6
     paginator = Paginator(pr, result)
 
     try:
@@ -49,7 +52,7 @@ def products(request, category_id=None):
 
     pages_range = range(left_number, right_number)
     context = {
-        'title': 'Магазин аквариумистики "Panda"',
+        'title': tit,
         'slider_list': slider_list,
         'products_list': pr,
         'category_id': category_id,

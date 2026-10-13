@@ -6,7 +6,7 @@ from django.urls import reverse_lazy
 from .models import Order
 
 class OrderCreateView(CreateView):
-    slider_list = CatSlider.objects.all()
+    # slider_list = CatSlider.objects.all()
     form_class = OrderForm
     template_name = 'orders/order-create.html'
     success_url = reverse_lazy('full-order')
@@ -14,8 +14,9 @@ class OrderCreateView(CreateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['title'] = "Store - Оформление заказа"
-        # context['slider_list'] = "slider_list"
+        context['title'] = "Panda - Оформление заказа"
+        context['slider_list'] = CatSlider.objects.all()
+        context['category_id'] = None
         return context
 
     def form_valid(self, form):
@@ -34,7 +35,9 @@ class OrderListView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['title'] = "Store - Заказы"
+        context['title'] = "Panda - Заказы"
+        context['slider_list'] = CatSlider.objects.all()
+        context['category_id'] = None
         return context
 
     def get_queryset(self):
@@ -44,11 +47,13 @@ class OrderListView(ListView):
 class OrderDetailView(DetailView):
     model = Order
     template_name = 'orders/order.html'
-    # context_object_name = 'obj11111'
+
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['title'] = f"Store - Заказ #{self.object.id}"
+        context['title'] = f"Panda - Заказ #{self.object.id}"
+        context['slider_list'] = CatSlider.objects.all()
+        context['category_id'] = None
         return context
 
 # Create your views here.

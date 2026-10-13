@@ -82,7 +82,7 @@ def profile(request):
     total_sum = sum(basket.sum() for basket in baskets)
 
     context = {
-        'title': 'Store - Профиль',
+        'title': 'Panda - Профиль',
         'form': form,
         'slider_list': slider_list,
         'baskets': Basket.objects.filter(user=user),
