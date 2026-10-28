@@ -187,7 +187,7 @@ ul{
     border-radius: 15px;
     background-image: url('1636593421_31-papik-pro-p-html-risunok-fona-32.jpg');
     color: white;
-    margin-top: 50px;
+    margin-top: 0px;
     padding: 15px;
     text-align: center;
     font-size: 36px;
@@ -351,5 +351,11 @@ ul{
     
 }
 
+.pt-5{
+    padding-top: 0px;
+}
 
+.mt-5{
+    margin-top: 10px;
+}
 

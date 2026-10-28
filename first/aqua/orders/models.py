@@ -23,7 +23,7 @@ class Order(models.Model):
     initiator = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='Заказчик')
 
     def __str__(self):
-        return f"Заказ #{self.id}. {self.first_name} {self.last_name}"
+        return f"Заказ #{self.id}.   {self.created}   Получатель: {self.first_name} {self.last_name}   Заказчик: {self.initiator}"
 
     def update_after_payment(self):
         baskets = Basket.objects.filter(user=self.initiator)

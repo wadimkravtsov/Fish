@@ -25,8 +25,13 @@ class OrderCreateView(CreateView):
 
 def full_order(request):
     order = Order.objects.all().order_by('created').last()
+    slider_list = CatSlider.objects.all()
     order.update_after_payment()
-    return render(request, 'orders/success.html')
+    context = {
+        'title': "Успешно!",
+        'slider_list': slider_list,
+    }
+    return render(request, 'orders/success.html', context)
 
 class OrderListView(ListView):
     model = Order

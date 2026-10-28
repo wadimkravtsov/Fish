@@ -43,11 +43,12 @@
                     <li><a href="{% url 'products' %}">Каталог</a></li>
                     {% if user.is_authenticated %}
                     <li><a href="{% url 'profile' %}">{{ user.username }}</a></li>
+                    <li><a href="{% url 'orders-list' %}">Заказы</a></li>
+                    <li><a href="{% url 'logout' %}">Выйти</a></li>
                     {% else %}
                     <li><a href="{% url 'login' %}">Войти</a></li>
                     {% endif %}
-                    <li><a href="{% url 'orders-list' %}">Заказы</a></li>
-                    <li><a href="{% url 'logout' %}">Выйти</a></li>
+
                 </ul>
                 <img src="../../static/panda/panda.jpg" alt="Панда" width="400" height="300">
             </div>

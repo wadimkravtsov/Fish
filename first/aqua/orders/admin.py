@@ -8,6 +8,8 @@ class OrderAdm(admin.ModelAdmin):
               ('email', 'address'),
               'basket_history', 'initiator')
     readonly_fields = ('id', 'created')
+    # def formatted_created(self, obj):
+    #     return obj.created.strftime('%Y-%m-%d %H:%M')
 
 admin.site.register(Order,OrderAdm)
 
