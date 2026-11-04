@@ -8,7 +8,7 @@ def aqua_base(request):
     slider_list = CatSlider.objects.all()
     products_list = Product.objects.all()
     context = {
-        'title': 'Магазин аквариумистики "Panda"',
+        'title': 'Аквамаркет "Panda"',
         'slider_list': slider_list,
         'products_list': products_list
     }
@@ -27,7 +27,7 @@ def products(request, category_id=None):
         tit = f"Panda - {cat_one.cat_name}"
     else:
         pr = Product.objects.filter(name__icontains=search_product)
-        tit = 'Магазин аквариумистики "Panda"'
+        tit = 'Аквамаркет "Panda"'
 
     page = request.GET.get('page')
     result = 6
@@ -66,7 +66,7 @@ def product(request, pk):
     product_obj = Product.objects.get(id=pk)
     slider_list = CatSlider.objects.all()
     context = {
-        'title': 'Магазин аквариумистики "Panda"',
+        'title': 'Аквамаркет "Panda"',
         'slider_list': slider_list,
         'product': product_obj,
     }

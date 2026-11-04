@@ -9,14 +9,14 @@ class Order(models.Model):
     DELIVERED = 3
     STATUSES = (
         (CREATED, 'Создан'),
-        (PAID, 'Оплачен'),
-        (ON_WAY, 'В пути'),
-        (DELIVERED, 'Доставлен')
+        (PAID, 'Принят'),
+        (ON_WAY, 'Готов'),
+        (DELIVERED, 'Передан Заказчику')
     )
     first_name = models.CharField(max_length=100, verbose_name='Имя')
     last_name = models.CharField(max_length=100, verbose_name='Фамилия')
     email = models.EmailField(max_length=200, verbose_name='Email')
-    address = models.CharField(max_length=250, verbose_name='Адрес')
+    address = models.CharField(max_length=250, verbose_name='Телефон')
     basket_history = models.JSONField(default=dict, verbose_name='История заказов')
     created = models.DateTimeField(auto_now_add=True, verbose_name='Дата создания')
     status = models.SmallIntegerField(default=CREATED, choices=STATUSES)

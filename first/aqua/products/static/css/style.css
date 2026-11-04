@@ -359,3 +359,42 @@ ul{
     margin-top: 10px;
 }
 
+/* Подвал */
+
+.site-footer{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #264b5d;
+    margin-top: 40px;
+    padding: 20px;
+    color: white;
+    text-align: center;
+}
+
+.mess{
+    display: flex;
+    gap: 10px;
+}
+
+.whatsapp-label {
+  width: 35px;
+  height: 35px;
+  float: left;
+  margin-right: 20px;
+  background: url(../products/wa-logo.png) no-repeat center top / cover;
+}
+.telegram-label {
+  width: 35px;
+  height: 35px;
+  float: left;
+  margin-right: 20px;
+  background: url(../products/tg-logo.png) no-repeat center top / cover;
+}
+.vk-label {
+  width: 45px;
+  height: 45px;
+  float: left;
+  padding: 5px;
+  background: url(../products/img-subsc-vk.png) no-repeat center top / cover;
+}
+

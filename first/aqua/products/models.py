@@ -13,6 +13,7 @@ class CatSlider(models.Model):
         return self.cat_name
 
     class Meta:
+        # ordering = ['cat_name']
         verbose_name = 'категория'
         verbose_name_plural = 'категории'
 

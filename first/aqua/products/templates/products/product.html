@@ -20,7 +20,9 @@
         <div class="long-text">
             {{ product.description }}
         </div>
+        {% if user.is_authenticated %}
         <a href="{% url 'basket_add' product.id %}" class="btn-product">В КОРЗИНУ</a>
+        {% endif %}
         <img src="../../static/panda/panda.jpg" class="panda" alt="Панда" width="500" height="375">
     </div>
 </div>

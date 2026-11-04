@@ -12,6 +12,7 @@ class PhotoAdd(admin.StackedInline):
 class ProductAdmin(admin.ModelAdmin):
     list_display = ('id', 'name', 'category', 'price', 'quantity')
     list_display_links = ('id', 'name')
+    search_fields = ('name',)
     inlines = [PhotoAdd]
 
 class PhotoAdmin(admin.ModelAdmin):
