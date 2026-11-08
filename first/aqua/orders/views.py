@@ -47,7 +47,10 @@ class OrderListView(ListView):
 
     def get_queryset(self):
         queryset = super().get_queryset()
-        return queryset.filter(initiator=self.request.user)
+        if self.request.user.is_superuser:
+            return queryset
+        else:
+            return queryset.filter(initiator=self.request.user)
 
 class OrderDetailView(DetailView):
     model = Order

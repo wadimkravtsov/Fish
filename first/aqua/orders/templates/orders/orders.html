@@ -22,6 +22,7 @@
                         <th scope="col">Статус</th>
                         <th scope="col">Создан</th>
                         <th scope="col">Итого</th>
+                        <th scope="col">Заказчик</th>
                         <th scope="col">Действие</th>
                     </tr>
                     </thead>
@@ -32,6 +33,7 @@
                         <td>{{ order.get_status_display }}</td>
                         <td>{{ order.created }}</td>
                         <td>{{ order.basket_history.total_sum }} руб.</td>
+                        <td>{{ order.initiator.username }}</td>
                         <td>
                             <a href="{% url 'order' order.id %}">просмотреть</a>
                         </td>

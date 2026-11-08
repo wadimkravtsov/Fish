@@ -6,6 +6,7 @@ html, body{
 
 
 .contbase{
+    /* max-width: 1920px; */
     border: solid 4px rgb(32, 32, 127);
     border-radius: 15px;
     background-image: url('1636593421_31-papik-pro-p-html-risunok-fona-32.jpg');
@@ -13,6 +14,7 @@ html, body{
     background-position: center center;
     background-size: cover;
     padding-top: 10px
+    
 }
 
 h1{
@@ -65,6 +67,7 @@ h1:hover{
 
 .content{
     display: flex;
+    /* flex-wrap: wrap; */
     justify-content: space-between;
     margin-bottom: 10px;
 }
@@ -134,8 +137,8 @@ ul{
     width: 450px;
     padding: 5px;
     margin: 50px;
-    border:  2px solid white;
-    background: rgb(214, 214, 222);
+    border:  5px solid white;
+    background: rgb(195, 195, 212);
     box-sizing: border-box;
 
 }
@@ -363,6 +366,7 @@ ul{
 
 .site-footer{
     display: flex;
+    align-items: center;
     justify-content: space-evenly;
     background-color: #264b5d;
     margin-top: 40px;
@@ -394,7 +398,9 @@ ul{
   width: 45px;
   height: 45px;
   float: left;
-  padding: 10px;
+  /* padding: 10px; */
   background: url(../products/img-subsc-vk.png) no-repeat center top / cover;
 }
+
+
 

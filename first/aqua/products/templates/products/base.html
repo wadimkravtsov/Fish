@@ -37,12 +37,14 @@
                 </form>
 
             </div>
+            <div class="cars">
             {% include 'products/carusel.html' %}
+            </div>
             <div class="sidebar-menu">
                 <ul>
                     <li><a href="{% url 'products' %}">Каталог</a></li>
                     {% if user.is_authenticated %}
-                    <li><a href="{% url 'profile' %}">{{ user.username }}</a></li>
+                    <li><a href="{% url 'profile' %}">{{ user.username }} личный кабинет</a></li>
                     <li><a href="{% url 'orders-list' %}">Заказы</a></li>
                     <li><a href="{% url 'logout' %}">Выйти</a></li>
                     {% else %}
@@ -61,14 +63,16 @@
 <footer class ="site-footer">
     <div>
         <h2>Аквамаркет "Panda"</h2>
-        <p>г. Барнаул Крытый рынок, ул. Германа Титова 6<br>ИП Титов Е.А.</p>
+        <p>г. Барнаул Крытый рынок, ул. Германа Титова 6, 21 павильон<br>ИП Титов Е.А.</p>
+        <h5 style ="color: yellow">Работаем:  будни 10:00-18:00; сб,вс 09:00-17:00</h5>
     </div>
     <img src="../../static/panda/panda.jpg" alt="Панда" width="180" height="120">
     <div class = "contact">
-        <p style ="font-size: 22px;">Контакты:<br>тел: +7 923 655 1442 </p>
-        <div class ="mess">
+        <p style ="font-size: 22px; margin-bottom: 0px;">Контакты:</p>
+        <a style ="font-size: 22px; color: white;" href="tel:+79236551442">тел: +7 (923) 655-14-42</a>
+        <div class ="mess" style = "margin-top: 10px;">
             <a class="whatsapp-label" href="https://web.whatsapp.com/"></a>
-            <a class="telegram-label" href="https://t.me/+79050804475"></a>
+<!--            <a class="telegram-label" href="https://t.me/+79050804475"></a>-->
             <a class="vk-label" href="/"></a>
         </div>
 </footer>
