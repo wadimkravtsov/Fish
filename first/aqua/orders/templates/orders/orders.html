@@ -12,10 +12,10 @@
 <!-- Page Content -->
 <section>
     <div>
-        <div style="width: 1200px; margin: 10px auto;">
+        <div style="margin: 10px auto;">
             <h1 style = "color: blue;">Заказы</h1>
             <div class="orders mt-5">
-                <table class="table" style="width: 1200px; margin-left: 70px;">
+                <table class="table">
                     <thead>
                     <tr class="table-light">
                         <th scope="col">#</th>
@@ -33,7 +33,7 @@
                         <td>{{ order.get_status_display }}</td>
                         <td>{{ order.created }}</td>
                         <td>{{ order.basket_history.total_sum }} руб.</td>
-                        <td>{{ order.initiator.username }}</td>
+                        <td>{{ order.initiator.first_name }} {{ order.initiator.last_name }}</td>
                         <td>
                             <a href="{% url 'order' order.id %}">просмотреть</a>
                         </td>
